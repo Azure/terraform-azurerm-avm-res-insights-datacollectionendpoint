@@ -1,5 +1,6 @@
 terraform {
   required_version = "~> 1.5"
+
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
@@ -48,12 +49,13 @@ resource "azurerm_resource_group" "this" {
 # Leaving location as `null` will cause the module to use the resource group location
 # with a data source.
 module "datacollectionendpoint" {
-  source                        = "../../"
+  source = "../../"
+
+  kind                          = "Windows"
   location                      = azurerm_resource_group.this.location
   name                          = "example-mdce"
-  resource_group_name           = azurerm_resource_group.this.name
-  kind                          = "Windows"
   public_network_access_enabled = false
+  resource_group_name           = azurerm_resource_group.this.name
   enable_telemetry              = var.enable_telemetry
   tags = {
     cc = "avm"
