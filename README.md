@@ -58,7 +58,7 @@ Things to do:
 
 | Name | Description |
 |------|-------------|
-| <a name="output_configuration_access_endpoint"></a> [configuration\_access\_endpoint](#output\_configuration\_access\_endpoint) | TThe endpoint used for accessing configuration. |
+| <a name="output_configuration_access_endpoint"></a> [configuration\_access\_endpoint](#output\_configuration\_access\_endpoint) | The endpoint used for accessing configuration. |
 | <a name="output_immutable_id"></a> [immutable\_id](#output\_immutable\_id) | The immutable ID of the Data Collection Endpoint. |
 | <a name="output_logs_ingestion_endpoint"></a> [logs\_ingestion\_endpoint](#output\_logs\_ingestion\_endpoint) | The endpoint used for ingesting logs |
 | <a name="output_resource_id"></a> [resource\_id](#output\_resource\_id) | This is the full output for the resource. |
