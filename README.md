@@ -23,104 +23,45 @@ Things to do:
 <!-- markdownlint-disable MD033 -->
 ## Requirements
 
-The following requirements are needed by this module:
-
-- <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) (~> 1.5)
-
-- <a name="requirement_azapi"></a> [azapi](#requirement\_azapi) (~> 2.4)
-
-- <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) (~> 3.71)
-
-- <a name="requirement_modtm"></a> [modtm](#requirement\_modtm) (~> 0.3)
-
-- <a name="requirement_random"></a> [random](#requirement\_random) (~> 3.5)
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.5 |
+| <a name="requirement_azapi"></a> [azapi](#requirement\_azapi) | ~> 2.4 |
+| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | ~> 3.71 |
+| <a name="requirement_modtm"></a> [modtm](#requirement\_modtm) | ~> 0.3 |
+| <a name="requirement_random"></a> [random](#requirement\_random) | ~> 3.5 |
 
 ## Resources
 
-The following resources are used by this module:
-
-- [azurerm_monitor_data_collection_endpoint.example](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_data_collection_endpoint) (resource)
-- [modtm_telemetry.telemetry](https://registry.terraform.io/providers/azure/modtm/latest/docs/resources/telemetry) (resource)
-- [random_uuid.telemetry](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/uuid) (resource)
-- [azapi_client_config.telemetry](https://registry.terraform.io/providers/Azure/azapi/latest/docs/data-sources/client_config) (data source)
-- [modtm_module_source.telemetry](https://registry.terraform.io/providers/azure/modtm/latest/docs/data-sources/module_source) (data source)
+| Name | Type |
+|------|------|
+| [azurerm_monitor_data_collection_endpoint.this](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_data_collection_endpoint) | resource |
+| [modtm_telemetry.telemetry](https://registry.terraform.io/providers/azure/modtm/latest/docs/resources/telemetry) | resource |
+| [random_uuid.telemetry](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/uuid) | resource |
+| [azapi_client_config.telemetry](https://registry.terraform.io/providers/Azure/azapi/latest/docs/data-sources/client_config) | data source |
+| [modtm_module_source.telemetry](https://registry.terraform.io/providers/azure/modtm/latest/docs/data-sources/module_source) | data source |
 
 <!-- markdownlint-disable MD013 -->
-## Required Inputs
+## Inputs
 
-The following input variables are required:
-
-### <a name="input_kind"></a> [kind](#input\_kind)
-
-Description: The kind of the this resource.
-
-Type: `string`
-
-### <a name="input_location"></a> [location](#input\_location)
-
-Description: Azure region where the resource should be deployed.
-
-Type: `string`
-
-### <a name="input_name"></a> [name](#input\_name)
-
-Description: The name of the this resource.
-
-Type: `string`
-
-### <a name="input_public_network_access_enabled"></a> [public\_network\_access\_enabled](#input\_public\_network\_access\_enabled)
-
-Description: Whether network access from public internet to the Data Collection Endpoint are allowed
-
-Type: `bool`
-
-### <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name)
-
-Description: The resource group where the resources will be deployed.
-
-Type: `string`
-
-## Optional Inputs
-
-The following input variables are optional (have default values):
-
-### <a name="input_enable_telemetry"></a> [enable\_telemetry](#input\_enable\_telemetry)
-
-Description: This variable controls whether or not telemetry is enabled for the module.  
-For more information see <https://aka.ms/avm/telemetryinfo>.  
-If it is set to false, then no telemetry will be collected.
-
-Type: `bool`
-
-Default: `true`
-
-### <a name="input_tags"></a> [tags](#input\_tags)
-
-Description: (Optional) Tags of the resource.
-
-Type: `map(string)`
-
-Default: `null`
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_kind"></a> [kind](#input\_kind) | The kind of the this resource. | `string` | n/a | yes |
+| <a name="input_location"></a> [location](#input\_location) | Azure region where the resource should be deployed. | `string` | n/a | yes |
+| <a name="input_name"></a> [name](#input\_name) | The name of the this resource. | `string` | n/a | yes |
+| <a name="input_public_network_access_enabled"></a> [public\_network\_access\_enabled](#input\_public\_network\_access\_enabled) | Whether network access from public internet to the Data Collection Endpoint are allowed | `bool` | n/a | yes |
+| <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name) | The resource group where the resources will be deployed. | `string` | n/a | yes |
+| <a name="input_enable_telemetry"></a> [enable\_telemetry](#input\_enable\_telemetry) | This variable controls whether or not telemetry is enabled for the module.<br/>For more information see <https://aka.ms/avm/telemetryinfo>.<br/>If it is set to false, then no telemetry will be collected. | `bool` | `true` | no |
+| <a name="input_tags"></a> [tags](#input\_tags) | (Optional) Tags of the resource. | `map(string)` | `null` | no |
 
 ## Outputs
 
-The following outputs are exported:
-
-### <a name="output_configuration_access_endpoint"></a> [configuration\_access\_endpoint](#output\_configuration\_access\_endpoint)
-
-Description: TThe endpoint used for accessing configuration.
-
-### <a name="output_immutable_id"></a> [immutable\_id](#output\_immutable\_id)
-
-Description: The immutable ID of the Data Collection Endpoint.
-
-### <a name="output_logs_ingestion_endpoint"></a> [logs\_ingestion\_endpoint](#output\_logs\_ingestion\_endpoint)
-
-Description: The endpoint used for ingesting logs
-
-### <a name="output_resource_id"></a> [resource\_id](#output\_resource\_id)
-
-Description: This is the full output for the resource.
+| Name | Description |
+|------|-------------|
+| <a name="output_configuration_access_endpoint"></a> [configuration\_access\_endpoint](#output\_configuration\_access\_endpoint) | TThe endpoint used for accessing configuration. |
+| <a name="output_immutable_id"></a> [immutable\_id](#output\_immutable\_id) | The immutable ID of the Data Collection Endpoint. |
+| <a name="output_logs_ingestion_endpoint"></a> [logs\_ingestion\_endpoint](#output\_logs\_ingestion\_endpoint) | The endpoint used for ingesting logs |
+| <a name="output_resource_id"></a> [resource\_id](#output\_resource\_id) | This is the full output for the resource. |
 
 ## Modules
 
