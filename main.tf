@@ -1,4 +1,4 @@
-resource "azurerm_monitor_data_collection_endpoint" "example" {
+resource "azurerm_monitor_data_collection_endpoint" "this" {
   location                      = var.location
   name                          = var.name
   resource_group_name           = var.resource_group_name
@@ -9,4 +9,9 @@ resource "azurerm_monitor_data_collection_endpoint" "example" {
   lifecycle {
     create_before_destroy = true
   }
+}
+
+moved {
+  from = azurerm_monitor_data_collection_endpoint.example
+  to   = azurerm_monitor_data_collection_endpoint.this
 }
