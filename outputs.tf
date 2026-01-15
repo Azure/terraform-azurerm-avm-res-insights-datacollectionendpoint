@@ -1,5 +1,5 @@
 output "configuration_access_endpoint" {
-  description = "The endpoint used for accessing configuration."
+  description = "TThe endpoint used for accessing configuration."
   value       = azurerm_monitor_data_collection_endpoint.this.configuration_access_endpoint
 }
 

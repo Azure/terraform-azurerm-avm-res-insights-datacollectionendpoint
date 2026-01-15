@@ -10,3 +10,8 @@ resource "azurerm_monitor_data_collection_endpoint" "this" {
     create_before_destroy = true
   }
 }
+
+moved {
+  from = azurerm_monitor_data_collection_endpoint.example
+  to   = azurerm_monitor_data_collection_endpoint.this
+}
