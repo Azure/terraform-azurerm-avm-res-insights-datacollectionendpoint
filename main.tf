@@ -19,9 +19,6 @@ resource "azapi_resource" "this" {
       }
     }
   }
-  create_headers = var.enable_telemetry ? { "User-Agent" : local.avm_azapi_header } : null
-  delete_headers = var.enable_telemetry ? { "User-Agent" : local.avm_azapi_header } : null
-  read_headers   = var.enable_telemetry ? { "User-Agent" : local.avm_azapi_header } : null
   response_export_values = [
     "properties.configurationAccess.endpoint",
     "properties.immutableId",
@@ -29,8 +26,7 @@ resource "azapi_resource" "this" {
     "properties.metricsIngestion.endpoint",
     "properties.provisioningState",
   ]
-  tags           = var.tags
-  update_headers = var.enable_telemetry ? { "User-Agent" : local.avm_azapi_header } : null
+  tags = var.tags
 
   dynamic "identity" {
     for_each = module.avm_interfaces.managed_identities_azapi != null ? [module.avm_interfaces.managed_identities_azapi] : []
