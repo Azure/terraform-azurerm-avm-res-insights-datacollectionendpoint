@@ -42,7 +42,7 @@ module "datacollectionendpoint" {
   location              = azapi_resource.resource_group.location
   name                  = "dce-${random_pet.name.id}"
   parent_id             = azapi_resource.resource_group.id
-  enable_telemetry      = false
+  enable_telemetry      = var.enable_telemetry
   kind                  = "Windows"
   public_network_access = "Disabled"
   tags = {
@@ -86,7 +86,7 @@ If it is set to false, then no telemetry will be collected.
 
 Type: `bool`
 
-Default: `true`
+Default: `false`
 
 ## Outputs
 
