@@ -31,9 +31,6 @@ resource "azapi_resource" "resource_group" {
 # This is the module call
 module "datacollectionendpoint" {
   source = "../../"
-  providers = {
-    azapi = azapi
-  }
 
   location              = azapi_resource.resource_group.location
   name                  = "dce-${random_pet.name.id}"
